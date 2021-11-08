@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_feedbacks_reviews",
+  "info": {
+    "name": "Review",
+    "icon": "star",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Review": {
+      "type": "text"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "lang": {
+      "type": "enumeration",
+      "enum": [
+        "en",
+        "fr"
+      ]
+    }
+  }
+}
