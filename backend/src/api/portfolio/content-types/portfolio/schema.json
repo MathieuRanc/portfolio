@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "portfolios",
+  "info": {
+    "singularName": "portfolio",
+    "pluralName": "portfolios",
+    "displayName": "Portfolio",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "projets": {
+      "displayName": "projets",
+      "type": "component",
+      "repeatable": true,
+      "component": "accueil.projets"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

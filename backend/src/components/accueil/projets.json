@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_accueil_projets",
+  "info": {
+    "displayName": "projets",
+    "icon": "hammer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "background_color": {
+      "type": "string",
+      "regex": "^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$"
+    }
+  }
+}

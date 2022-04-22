@@ -37,7 +37,7 @@ export default {
 
   // env variables: https://fr.nuxtjs.org/docs/2.x/configuration-glossary/configuration-env
   env: {
-    apiUrl: process.env.API_URL || 'http://localhost:1337',
+    API_URL: process.env.API_URL || 'http://localhost:1337',
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules

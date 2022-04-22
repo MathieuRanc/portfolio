@@ -71,37 +71,36 @@
         </div>
       </div>
     </div>
-    <div id="works">
+    <div id="works" v-if="portfolio">
       <kinesis-container class="container" event="scroll">
-        <kinesis-element tag="a" :strength="100" type="translate">
-          <div>
-            <img src="../assets/images/notacoeur.svg" alt="Projet Notacoeur" />
-          </div>
-        </kinesis-element>
-        <kinesis-element tag="a" :strength="300" type="translate">
-          <div>
-            <img src="../assets/images/lucas.svg" alt="Projet Lucas Pichard" />
-          </div>
-        </kinesis-element>
-        <kinesis-element tag="a" :strength="100" type="translate">
-          <div>
+        <kinesis-element
+          v-for="(projet, i) in portfolio.data.attributes.projets"
+          :key="projet.id"
+          tag="a"
+          :strength="
+            width > 768
+              ? Math.floor(i / 4) % 2
+                ? 200
+                : -200
+              : Math.floor(i / 2) % 2
+              ? 200
+              : -200
+          "
+          type="translate"
+          axis="x"
+          :href="projet.url"
+          target="_blank"
+        >
+          <div :style="'background-color: ' + projet.background_color">
             <img
-              src="../assets/images/fede.svg"
-              alt="Projet Fédé catho Lille"
-            />
-          </div>
-        </kinesis-element>
-        <kinesis-element tag="a" :strength="300" type="translate">
-          <div>
-            <img
-              src="../assets/images/lmlc.svg"
-              alt="Projet LMLCCOMMUNICATION"
+              :src="apiUrl + projet.image.data.attributes.url"
+              alt="Projet Notacoeur"
             />
           </div>
         </kinesis-element>
       </kinesis-container>
     </div>
-    <div class="feedbacks">
+    <!-- <div class="portfolio">
       <transition-group :name="direction" mode="ease-in-out">
         <Feedback v-if="feedback" :key="feedback.id" :feedback="feedback" />
       </transition-group>
@@ -113,7 +112,7 @@
           <img src="../assets/images/arrow_right.svg" alt="Flèche droite" />
         </div>
       </div>
-    </div>
+    </div> -->
     <div id="contact">
       <div class="container">
         <div>
@@ -122,7 +121,7 @@
           <img src="../assets/images/circle_light.svg" alt="light circle" />
         </div>
         <form action="" @submit="contact">
-          <h3>{{ $t('contact.form.h3') }}</h3>
+          <!-- <h3>{{ $t('contact.form.h3') }}</h3>
           <input
             type="text"
             name="name"
@@ -141,7 +140,10 @@
             rows="5"
             :placeholder="$t('contact.form.description')"
           ></textarea>
-          <input type="submit" :value="$t('contact.form.submit')" />
+          <input type="submit" :value="$t('contact.form.submit')" /> -->
+          <a href="mailto:contact@mathieuranc.fr">
+            {{ $t('contact.h2') }}
+          </a>
         </form>
       </div>
     </div>
@@ -150,27 +152,35 @@
 
 <script>
 export default {
+  fetchOnServer: false,
   data() {
     return {
       id: 0,
-      feedbacks: [],
+      portfolio: null,
       direction: '',
+      apiUrl: process.env.API_URL,
+      width: window.innerWidth,
     }
   },
   computed: {
-    feedback() {
-      this.id
-      if (this.feedbacks.length > 0) return this.feedbacks[this.id]
-      return null
-      // return this.feedbacks[this.id]
-    },
-    left() {
-      return this.id === 0 ? 'hidden' : null
-    },
-    right() {
-      return this.id === this.feedbacks.length - 1 ? 'hidden' : null
+    projects() {
+      return this.portfolio.data.attributes.projets
     },
   },
+  // computed: {
+  //   portfolio() {
+  //     this.id
+  //     if (this.portfolio.length > 0) return this.portfolio[this.id]
+  //     return null
+  //     // return this.portfolio[this.id]
+  //   },
+  //   left() {
+  //     return this.id === 0 ? 'hidden' : null
+  //   },
+  //   right() {
+  //     return this.id === this.portfolio.length - 1 ? 'hidden' : null
+  //   },
+  // },
   methods: {
     less() {
       this.direction = 'right'
@@ -178,20 +188,30 @@ export default {
     },
     plus() {
       this.direction = 'left'
-      if (this.id < this.feedbacks.length - 1) this.id += 1
+      if (this.id < this.portfolio.length - 1) this.id += 1
     },
     contact(target) {
       target.preventDefault()
       console.log('Envoi du message')
     },
+    onResize() {
+      this.width = window.innerWidth
+    },
   },
   async fetch() {
-    this.feedbacks = await fetch(process.env.apiUrl + '/feedbacks/', {
+    this.portfolio = await fetch(this.apiUrl + '/api/portfolio', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
       },
     }).then((response) => response.json())
+  },
+  mounted() {
+    this.$nextTick(() => window.addEventListener('resize', this.onResize))
+    window.scrollTo(0, 0)
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.onResize)
   },
 }
 </script>
@@ -215,7 +235,7 @@ button {
 }
 .technos,
 #service,
-.feedbacks {
+.portfolio {
   background-color: #fefafa;
 }
 header {
@@ -394,12 +414,16 @@ header {
     padding: 10%;
     padding-bottom: calc(20%);
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 10%;
     max-width: 1500px;
     margin: 0 auto;
     a {
+      display: block;
+      filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 1));
       div {
+        aspect-ratio: 1 / 1;
+        padding: 40px;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         transition: all 500ms ease-in-out;
       }
@@ -407,12 +431,12 @@ header {
         clip-path: polygon(5% 10%, 95% 0, 95% 90%, 5% 95%);
       }
       margin-bottom: auto;
-      &:nth-child(2n) {
-        margin-top: 10%;
-        &:not(:last-child) {
-          margin-bottom: -10%;
-        }
-      }
+      // &:nth-child(2n) {
+      //   margin-top: 10%;
+      //   &:not(:last-child) {
+      //     margin-bottom: -10%;
+      //   }
+      // }
       img {
         cursor: url('/cursor_pointer.svg') 15 15, pointer;
         width: 100%;
@@ -426,7 +450,7 @@ header {
     }
   }
 }
-.feedbacks {
+.portfolio {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -521,6 +545,21 @@ header {
       }
     }
   }
+  a {
+    display: block;
+    text-decoration: none;
+    background-color: $main;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: auto;
+    transition: background-color 200ms, transform 200ms;
+    background-color: $main;
+    &:hover {
+      background-color: #c23b3b;
+      transform: scale(1.05);
+    }
+  }
   form {
     display: flex;
     flex-direction: column;
@@ -562,6 +601,13 @@ header {
         background-color: #c23b3b;
         transform: scale(1.05);
       }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  #works {
+    .container {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 }
