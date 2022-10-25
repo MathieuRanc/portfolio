@@ -1,0 +1,261 @@
+{
+  "data": {
+    "id": 1,
+    "attributes": {
+      "createdAt": "2022-04-22T11:55:51.683Z",
+      "updatedAt": "2022-04-22T13:08:58.672Z",
+      "description": "Développeur web fullstack, je suis passioné d'informatique depuis le collège. J'ai réalisé des sites web à la pointe de la technologie au cours de mes études en collaboration avec une entreprise de communication dans le monde du digital, du branding et du content. J'ai aussi conçu et développé le site web de la fédération des étudiants de l'Université Catholique de Lille qui concerne plus de 35 000 étudiants.",
+      "projets": [
+        {
+          "id": 3,
+          "name": "LMLC Communication",
+          "url": "https://lmlccommunication.fr",
+          "background_color": "#fff",
+          "image": {
+            "data": {
+              "id": 3,
+              "attributes": {
+                "name": "LMLC Communication",
+                "alternativeText": "LMLC agence de communication",
+                "caption": "LMLC Communication",
+                "width": null,
+                "height": null,
+                "formats": null,
+                "hash": "LMLC_Communication_be09808012",
+                "ext": ".svg",
+                "mime": "image/svg+xml",
+                "size": 13.02,
+                "url": "/projects/LMLC_Communication_be09808012.svg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2022-04-22T11:54:09.743Z",
+                "updatedAt": "2022-04-22T11:54:09.743Z"
+              }
+            }
+          }
+        },
+        {
+          "id": 4,
+          "name": "Les Briques Rouges Festival",
+          "url": "https://lesbriquesrouges.fr",
+          "background_color": "#ffffe4",
+          "image": {
+            "data": {
+              "id": 2,
+              "attributes": {
+                "name": "Les Briques Rouges",
+                "alternativeText": "Les Briques Rouges Festival",
+                "caption": "Les Briques Rouges",
+                "width": null,
+                "height": null,
+                "formats": null,
+                "hash": "Les_Briques_Rouges_45116efdba",
+                "ext": ".svg",
+                "mime": "image/svg+xml",
+                "size": 32.8,
+                "url": "/projects/Les_Briques_Rouges_45116efdba.svg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2022-04-22T11:54:09.733Z",
+                "updatedAt": "2022-04-22T11:54:09.733Z"
+              }
+            }
+          }
+        },
+        {
+          "id": 1,
+          "name": "Boutique Lucas Pichard",
+          "url": "https://shop.lucaspichard.fr",
+          "background_color": "#ffdcd2",
+          "image": {
+            "data": {
+              "id": 6,
+              "attributes": {
+                "name": "Boutique Lucas Pichard",
+                "alternativeText": "Boutique Lucas Pichard Meilleur Coiffeur de France",
+                "caption": "Boutique Lucas Pichard",
+                "width": null,
+                "height": null,
+                "formats": null,
+                "hash": "Boutique_Lucas_Pichard_6e8f72cb9b",
+                "ext": ".svg",
+                "mime": "image/svg+xml",
+                "size": 237.93,
+                "url": "/projects/Boutique_Lucas_Pichard_6e8f72cb9b.svg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2022-04-22T11:54:09.833Z",
+                "updatedAt": "2022-04-22T11:54:09.833Z"
+              }
+            }
+          }
+        },
+        {
+          "id": 6,
+          "name": "Lucas Pichard",
+          "url": "https://lucaspichard.fr",
+          "background_color": "#000",
+          "image": {
+            "data": {
+              "id": 7,
+              "attributes": {
+                "name": "Lucas Pichard",
+                "alternativeText": "Lucas Pichard Meilleur coiffeur de France",
+                "caption": "Lucas Pichard",
+                "width": null,
+                "height": null,
+                "formats": null,
+                "hash": "Lucas_Pichard_99c00e977a",
+                "ext": ".svg",
+                "mime": "image/svg+xml",
+                "size": 249.49,
+                "url": "/projects/Lucas_Pichard_99c00e977a.svg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2022-04-22T11:54:09.840Z",
+                "updatedAt": "2022-04-22T11:54:09.840Z"
+              }
+            }
+          }
+        },
+        {
+          "id": 2,
+          "name": "Fédération catholique de Lille",
+          "url": "https://fedecatholille.fr",
+          "background_color": "#fff",
+          "image": {
+            "data": {
+              "id": 5,
+              "attributes": {
+                "name": "Fédération catholique de Lille",
+                "alternativeText": "Fédération catholique de Lille",
+                "caption": "Fédération catholique de Lille",
+                "width": null,
+                "height": null,
+                "formats": null,
+                "hash": "Federation_catholique_de_Lille_7ef78650a9",
+                "ext": ".svg",
+                "mime": "image/svg+xml",
+                "size": 48.48,
+                "url": "/projects/Federation_catholique_de_Lille_7ef78650a9.svg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2022-04-22T11:54:09.752Z",
+                "updatedAt": "2022-04-22T11:54:09.752Z"
+              }
+            }
+          }
+        },
+        {
+          "id": 5,
+          "name": "Les lanternes",
+          "url": "https://leslanternes-therapie.fr",
+          "background_color": "#fff",
+          "image": {
+            "data": {
+              "id": 4,
+              "attributes": {
+                "name": "Les lanternes",
+                "alternativeText": "Les lanternes",
+                "caption": "Les lanternes",
+                "width": null,
+                "height": null,
+                "formats": null,
+                "hash": "Les_lanternes_80f0145be0",
+                "ext": ".svg",
+                "mime": "image/svg+xml",
+                "size": 36.33,
+                "url": "/projects/Les_lanternes_80f0145be0.svg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2022-04-22T11:54:09.748Z",
+                "updatedAt": "2022-04-22T11:54:09.748Z"
+              }
+            }
+          }
+        },
+        {
+          "id": 7,
+          "name": "Notacoeur",
+          "url": "https://notacoeur-bourges.notaires.fr",
+          "background_color": "#fff",
+          "image": {
+            "data": {
+              "id": 8,
+              "attributes": {
+                "name": "Notacoeur",
+                "alternativeText": "Notacoeur Notaires Bourges",
+                "caption": "Notacoeur",
+                "width": 3856,
+                "height": 2797,
+                "formats": {
+                  "thumbnail": {
+                    "name": "thumbnail_Notacoeur",
+                    "hash": "thumbnail_Notacoeur_00b593512f",
+                    "ext": ".jpg",
+                    "mime": "image/jpeg",
+                    "path": null,
+                    "width": 215,
+                    "height": 156,
+                    "size": 8.37,
+                    "url": "/projects/thumbnail_Notacoeur_00b593512f.jpg"
+                  },
+                  "large": {
+                    "name": "large_Notacoeur",
+                    "hash": "large_Notacoeur_00b593512f",
+                    "ext": ".jpg",
+                    "mime": "image/jpeg",
+                    "path": null,
+                    "width": 1000,
+                    "height": 725,
+                    "size": 61.23,
+                    "url": "/projects/large_Notacoeur_00b593512f.jpg"
+                  },
+                  "medium": {
+                    "name": "medium_Notacoeur",
+                    "hash": "medium_Notacoeur_00b593512f",
+                    "ext": ".jpg",
+                    "mime": "image/jpeg",
+                    "path": null,
+                    "width": 750,
+                    "height": 544,
+                    "size": 42.21,
+                    "url": "/projects/medium_Notacoeur_00b593512f.jpg"
+                  },
+                  "small": {
+                    "name": "small_Notacoeur",
+                    "hash": "small_Notacoeur_00b593512f",
+                    "ext": ".jpg",
+                    "mime": "image/jpeg",
+                    "path": null,
+                    "width": 500,
+                    "height": 363,
+                    "size": 24.98,
+                    "url": "/projects/small_Notacoeur_00b593512f.jpg"
+                  }
+                },
+                "hash": "Notacoeur_00b593512f",
+                "ext": ".jpg",
+                "mime": "image/jpeg",
+                "size": 328.76,
+                "url": "/projects/Notacoeur_00b593512f.jpg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2022-04-22T11:54:10.246Z",
+                "updatedAt": "2022-04-22T11:59:09.358Z"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "meta": {}
+}

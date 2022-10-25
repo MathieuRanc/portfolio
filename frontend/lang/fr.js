@@ -5,7 +5,7 @@ export default {
   'header.p':
     "Développeur freelance et étudiant en école d'ingénieur à l'ISEN de Lille",
   'header.button': 'Travailler avec moi',
-  'service.h2': "Année D'expérience",
+  'service.h2': "Années d'expérience",
   'service.content.p':
     "Développeur web fullstack, je suis passioné d'informatique depuis le collège. J'ai réalisé des sites web à la pointe de la technologie au cours de mes études en collaboration avec une entreprise de communication dans le monde du digital, du branding et du content. J'ai aussi conçu et développé le site web de la fédération des étudiants de l'Université Catholique de Lille qui concerne plus de 35 000 étudiants.",
   'service.content.box.red.title': 'Développeur web',

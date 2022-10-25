@@ -34,7 +34,7 @@
     </header>
     <div id="service">
       <h2>
-        <span class="year-experience">1</span><span class="plus">+</span>
+        <span class="year-experience">2</span><span class="plus">+</span>
         <br />
         {{ $t('service.h2') }}
       </h2>
@@ -93,7 +93,7 @@
         >
           <div :style="'background-color: ' + projet.background_color">
             <img
-              :src="apiUrl + projet.image.data.attributes.url"
+              :src="projet.image.data.attributes.url"
               alt="Projet Notacoeur"
             />
           </div>
@@ -151,12 +151,13 @@
 </template>
 
 <script>
+import portfolio from '../assets/data/portfolio'
 export default {
-  fetchOnServer: false,
+  // fetchOnServer: false,
   data() {
     return {
       id: 0,
-      portfolio: null,
+      portfolio,
       direction: '',
       apiUrl: process.env.API_URL,
       width: window.innerWidth,
@@ -198,14 +199,14 @@ export default {
       this.width = window.innerWidth
     },
   },
-  async fetch() {
-    this.portfolio = await fetch(this.apiUrl + '/api/portfolio', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }).then((response) => response.json())
-  },
+  // async fetch() {
+  //   this.portfolio = await fetch(this.apiUrl + "/api/portfolio", {
+  //     method: "GET",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   }).then((response) => response.json());
+  // },
   mounted() {
     this.$nextTick(() => window.addEventListener('resize', this.onResize))
     window.scrollTo(0, 0)
@@ -412,41 +413,37 @@ header {
   border: none;
   .container {
     padding: 10%;
-    padding-bottom: calc(20%);
+    padding-bottom: 20%;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 10%;
+    gap: 50px;
     max-width: 1500px;
     margin: 0 auto;
     a {
       display: block;
-      filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 1));
       div {
+        // box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 1);
+        filter: brightness(0.95);
         aspect-ratio: 1 / 1;
-        padding: 40px;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-        transition: all 500ms ease-in-out;
+        transition: all 300ms ease-in-out;
       }
-      &:hover div {
-        clip-path: polygon(5% 10%, 95% 0, 95% 90%, 5% 95%);
-      }
-      margin-bottom: auto;
-      // &:nth-child(2n) {
-      //   margin-top: 10%;
-      //   &:not(:last-child) {
-      //     margin-bottom: -10%;
-      //   }
-      // }
       img {
+        padding: 40px;
         cursor: url('/cursor_pointer.svg') 15 15, pointer;
         width: 100%;
         height: 100%;
         object-fit: contain;
-        // transition: transform 500ms ease-out;
+        transition: all 300ms ease-in-out;
       }
-      // &:hover img {
-      //   transform: scale(1.05);
-      // }
+      &:hover div {
+        filter: brightness(0.98);
+        clip-path: polygon(5% 10%, 95% 5%, 95% 90%, 5% 95%);
+        img {
+          padding: 30px;
+        }
+      }
+      margin-bottom: auto;
     }
   }
 }
